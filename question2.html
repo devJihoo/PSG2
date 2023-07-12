@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>헤이그 특사</title>
+    <style>
+      @font-face {
+        font-family: "KCC-Ganpan";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        font-family: KCC-Ganpan;
+        text-align: center;
+        background-color: ivory;
+      }
+      .btn {
+        letter-spacing: 1px;
+        box-shadow: 2px 2px 2px gray;
+        font-weight: lighter;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: burlywood;
+        text-decoration-line: none;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script type="text/babel">
+    const Title = () => (
+      <h1
+        style={{
+          color: "firebrick",
+          marginBottom: "60px",
+          fontWeight: "bold",
+        }}
+      >
+        미션2. 고종의 밀명: 헤이그 특사
+      </h1>
+    );
+    const Question = () => (
+      <p style={{ margin: "40px" }}>다음 중 헤이그를 갈 때 타고가야할 것은?</p>
+    );
+    function wrongAnswer(event) {
+      event.preventDefault();
+      alert("오답");
+    }
+    const TruckButton = () => (
+      <a
+        style={{ margin: "20px" }}
+        className="btn"
+        href=""
+        onClick={wrongAnswer}
+      >
+        트럭
+      </a>
+    );
+    const GamaButton = () => (
+      <a
+        style={{ margin: "20px" }}
+        className="btn"
+        href=""
+        onClick={wrongAnswer}
+      >
+        가마
+      </a>
+    );
+    const ShipButton = () => (
+      <a
+        style={{ margin: "20px" }}
+        className="btn"
+        href=""
+        onClick={wrongAnswer}
+      >
+        선박
+      </a>
+    );
+    const CartButton = () => (
+      <a
+        style={{ margin: "20px" }}
+        className="btn"
+        href=""
+        onClick={(event) => {
+          event.preventDefault();
+          window.location.replace("final.html");
+        }}
+      >
+        카트
+      </a>
+    );
+    const Container = () => (
+      <div>
+        <Title />
+        <Question />
+        <p>
+          <GamaButton />
+          <TruckButton />
+          <ShipButton />
+          <CartButton />
+        </p>
+      </div>
+    );
+    ReactDOM.render(<Container />, document.querySelector("body"));
+  </script>
+</html>

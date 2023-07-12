@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이상설 선생과 카트라이더</title>
+    <style>
+      @font-face {
+        font-family: "KCC-Ganpan";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        font-family: KCC-Ganpan;
+        background-color: ivory;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script type="text/babel">
+    const BackToHome = () => (
+      <a
+        href=""
+        style={{ textDecorationLine: "none", color: "black" }}
+        onClick={(event) => {
+          event.preventDefault();
+          window.location.replace("index.html");
+        }}
+      >
+        {"<< "}처음 화면으로
+      </a>
+    );
+    const Title = () => (
+      <h1 style={{ color: "firebrick" }}>가자! 헤이그로!!</h1>
+    );
+    const Explain = () => (
+      <div>
+        <p>
+          당신은 이상설 선생을 도와 헤이그 특사를 갈 준비를 모두 마쳤습니다.
+        </p>
+        <p>진행요원의 안내에 따라 카트를 타고 헤이그로 향하십시오.</p>
+      </div>
+    );
+    const Container = () => (
+      <div>
+        <BackToHome />
+        <div style={{ textAlign: "center" }}>
+          <Title />
+          <Explain />
+        </div>
+      </div>
+    );
+    ReactDOM.render(<Container />, document.querySelector("body"));
+  </script>
+</html>
